@@ -15,7 +15,7 @@
   });
 
   // Versão e link direto do arquivo da última Release (se a API responder).
-  fetch("https://api.github.com/repos/NangilJunior/librenotes-releases/releases/latest")
+  fetch("https://api.github.com/repos/librenotesapp/librenotesapp.github.io/releases/latest")
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(rel => {
       document.getElementById("version").textContent = rel.tag_name.replace(/^v/, "");

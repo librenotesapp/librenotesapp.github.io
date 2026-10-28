@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /figma-interprise/
 
-Sitemap: https://nangiljunior.github.io/librenotes-releases/sitemap.xml
+Sitemap: https://librenotesapp.github.io/sitemap.xml

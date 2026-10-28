@@ -2,11 +2,11 @@
 
 Anotações desenhadas à mão e quadros infinitos para Linux (GTK 4 + libadwaita).
 
-Site: https://nangiljunior.github.io/librenotes-releases/
+Site: https://librenotesapp.github.io/
 
 ## Baixar
 
-**[Última versão](https://github.com/NangilJunior/librenotes-releases/releases/latest)**: baixe o arquivo `libreNotes-<versão>-linux-x86_64.tar.gz`.
+**[Última versão](https://github.com/librenotesapp/librenotesapp.github.io/releases/latest)**: baixe o arquivo `libreNotes-<versão>-linux-x86_64.tar.gz`.
 
 ## Instalar (Linux x86_64)
 
