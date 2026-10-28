@@ -25,7 +25,7 @@
   if (os) {
     document.getElementById("os-" + os)?.classList.add("current");
     const row = document.getElementById("hero-" + os);
-    if (row) { row.classList.add("current"); row.parentNode.insertBefore(row, row.parentNode.children[1]); }
+    if (row) { row.classList.add("current"); row.parentNode.prepend(row); }
   }
 
   // Links sempre na última Release (se a API responder): cada link sabe o

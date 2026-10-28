@@ -167,22 +167,27 @@ code { font: .82em ui-monospace, "Fira Code", monospace; }
   border: 2px dashed var(--ink-soft);
 }
 .btn.small { font-size: 18px; padding: 8px 18px; }
-.btn.soon, a.link.soon { opacity: .55; }
+.btn.soon, a.link.soon, .get-os a.soon { opacity: .55; }
 .btn.soon.primary { background: var(--card); }
 .btn.tiny { font-size: 16px; padding: 5px 12px; box-shadow: 2px 3px 0 var(--shadow); }
 
-/* Topo: todas as opções de download. */
-.hero-dl { background: var(--card); padding: 16px 18px; display: grid; gap: 10px; max-width: 34em; }
-.hero-dl-title { display: flex; align-items: center; gap: 8px; margin: 0; font-family: var(--hand); font-size: 30px; line-height: 1; }
-.hero-dl-title svg { width: 24px; height: 24px; }
-.hero-os { display: grid; grid-template-columns: 84px 1fr; gap: 4px 10px; align-items: center; padding: 6px 8px; border-radius: 10px; }
-.hero-os.current { background: var(--accent-wash); }
-.hero-os .os-name { font-weight: 700; font-size: 18px; }
-.hero-os .os-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.hero-os .more { grid-column: 2; font-size: 15px; color: var(--ink-soft); }
-.hero-dl a.link, .hero-os a.link { color: var(--ink); text-decoration: underline wavy var(--accent); text-underline-offset: 4px; }
-.hero-dl-help { font-size: 16px; justify-self: start; }
-@media (max-width: 480px) { .hero-os { grid-template-columns: 1fr; } .hero-os .more { grid-column: 1; } }
+/* Topo: os três sistemas, lado a lado e do mesmo tamanho. */
+.get { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 32em; }
+.get-os {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding: 12px 14px; background: var(--card); border: 2px solid var(--ink); border-radius: var(--sketch);
+  box-shadow: 2px 3px 0 var(--shadow);
+}
+.get-os:nth-child(2) { border-radius: var(--sketch-2); }
+.get-os.current { border-color: var(--accent); box-shadow: 3px 4px 0 var(--accent); }
+.get-os svg { width: 28px; height: 28px; stroke: var(--ink); margin-bottom: 2px; }
+.get-os strong { font-family: var(--hand); font-size: 26px; line-height: 1; margin-bottom: 4px; }
+.get-os a { font-size: 17px; color: var(--ink); text-decoration: none; line-height: 1.25; }
+.get-os a.go { font-weight: 700; text-decoration: underline wavy var(--accent); text-underline-offset: 4px; }
+.get-os a.alt { color: var(--ink-soft); }
+.get-os a:hover { color: var(--accent); }
+.meta a { color: inherit; }
+@media (max-width: 420px) { .get { grid-template-columns: 1fr; } .get-os { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 14px; } }
 .copied { color: var(--accent); font-size: 17px; margin-left: 10px; opacity: 0; transition: opacity .2s; }
 .copied.show { opacity: 1; }
 
