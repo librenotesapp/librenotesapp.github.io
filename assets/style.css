@@ -132,6 +132,16 @@ h2 { font-family: var(--hand); font-weight: 700; font-size: clamp(40px, 5vw, 56p
 }
 .step h3 { font-family: var(--hand); font-size: 30px; margin: 10px 0 6px; }
 .step p { margin: 0 0 12px; color: var(--ink-soft); font-size: 18px; }
+.platform { background: var(--card); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.platform:nth-child(2) { border-radius: var(--sketch-2); }
+.platform.current { outline: 3px dashed var(--accent); outline-offset: 6px; }
+.platform > svg { width: 46px; height: 46px; stroke: var(--ink); }
+.platform h3 { font-family: var(--hand); font-size: 34px; line-height: 1; margin: 0; }
+.platform p { margin: 0; color: var(--ink-soft); font-size: 17px; }
+.platform .os-req { font-size: 16px; margin-top: -6px; }
+.dl { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 2px; }
+.dl .btn { font-size: 17px; padding: 8px 14px; }
+.platform a.link { color: var(--ink); text-decoration: underline wavy var(--accent); text-underline-offset: 4px; }
 pre {
   margin: 0; padding: 12px 14px; overflow-x: auto;
   background: var(--paper-shade); border: 2px dashed var(--ink-soft); border-radius: 10px;
@@ -157,6 +167,22 @@ code { font: .82em ui-monospace, "Fira Code", monospace; }
   border: 2px dashed var(--ink-soft);
 }
 .btn.small { font-size: 18px; padding: 8px 18px; }
+.btn.soon, a.link.soon { opacity: .55; }
+.btn.soon.primary { background: var(--card); }
+.btn.tiny { font-size: 16px; padding: 5px 12px; box-shadow: 2px 3px 0 var(--shadow); }
+
+/* Topo: todas as opções de download. */
+.hero-dl { background: var(--card); padding: 16px 18px; display: grid; gap: 10px; max-width: 34em; }
+.hero-dl-title { display: flex; align-items: center; gap: 8px; margin: 0; font-family: var(--hand); font-size: 30px; line-height: 1; }
+.hero-dl-title svg { width: 24px; height: 24px; }
+.hero-os { display: grid; grid-template-columns: 84px 1fr; gap: 4px 10px; align-items: center; padding: 6px 8px; border-radius: 10px; }
+.hero-os.current { background: var(--accent-wash); }
+.hero-os .os-name { font-weight: 700; font-size: 18px; }
+.hero-os .os-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-os .more { grid-column: 2; font-size: 15px; color: var(--ink-soft); }
+.hero-dl a.link, .hero-os a.link { color: var(--ink); text-decoration: underline wavy var(--accent); text-underline-offset: 4px; }
+.hero-dl-help { font-size: 16px; justify-self: start; }
+@media (max-width: 480px) { .hero-os { grid-template-columns: 1fr; } .hero-os .more { grid-column: 1; } }
 .copied { color: var(--accent); font-size: 17px; margin-left: 10px; opacity: 0; transition: opacity .2s; }
 .copied.show { opacity: 1; }
 

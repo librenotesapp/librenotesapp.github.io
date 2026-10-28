@@ -14,12 +14,36 @@
     setTimeout(() => ok.classList.remove("show"), 1800);
   });
 
-  // Versão e link direto do arquivo da última Release (se a API responder).
+  // Sistema do visitante: a linha e o cartão dele ficam em destaque (primeiro).
+  const ua = navigator.userAgent;
+  const plat = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+  const mobile = /Android|iPhone|iPad|iPod/i.test(ua);
+  const os = mobile ? null
+    : /Win/i.test(plat) || /Windows/i.test(ua) ? "windows"
+    : /Mac/i.test(plat) || /Mac OS X/i.test(ua) ? "mac"
+    : /Linux|X11|CrOS/i.test(plat + ua) ? "linux" : null;
+  if (os) {
+    document.getElementById("os-" + os)?.classList.add("current");
+    const row = document.getElementById("hero-" + os);
+    if (row) { row.classList.add("current"); row.parentNode.insertBefore(row, row.parentNode.children[1]); }
+  }
+
+  // Links sempre na última Release (se a API responder): cada link sabe o
+  // final do nome do arquivo (data-asset) e o href fixo é só o reserva.
   fetch("https://api.github.com/repos/librenotesapp/librenotesapp.github.io/releases/latest")
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(rel => {
       document.getElementById("version").textContent = rel.tag_name.replace(/^v/, "");
-      const asset = (rel.assets || []).find(a => a.name.endsWith(".tar.gz"));
-      if (asset) document.getElementById("download").href = asset.browser_download_url;
+      const assets = rel.assets || [];
+      document.querySelectorAll("[data-asset]").forEach(a => {
+        const found = assets.find(x => x.name.endsWith(a.dataset.asset));
+        if (found) { a.href = found.browser_download_url; return; }
+        // Arquivo ainda não saiu nesta versão: avisa em vez de dar erro.
+        a.href = rel.html_url;
+        a.classList.add("soon");
+        a.removeAttribute("download");
+        a.title = document.documentElement.lang.startsWith("pt") ? "Em breve" : "Coming soon";
+        a.append(document.documentElement.lang.startsWith("pt") ? " · em breve" : " · coming soon");
+      });
     })
     .catch(() => {});

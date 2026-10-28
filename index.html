@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>libreNotes: app de anotações à mão grátis para Linux</title>
-<meta name="description" content="Anotações com cara de caderno desenhado à mão para Linux: quadro infinito, canetas com pressão, anotações em PDF, pastas e 11 tipos de papel. Gratuito, sem conta e sem anúncios.">
+<title>libreNotes: app de anotações à mão grátis para Windows, Mac e Linux</title>
+<meta name="description" content="Anotações com cara de caderno desenhado à mão para Windows, Mac e Linux: quadro infinito, canetas com pressão, anotações em PDF, pastas e 11 tipos de papel. Gratuito, sem conta e sem anúncios.">
 <link rel="canonical" href="https://librenotesapp.github.io/">
 <link rel="alternate" hreflang="pt-BR" href="https://librenotesapp.github.io/">
 <link rel="alternate" hreflang="en" href="https://librenotesapp.github.io/en/">
@@ -19,14 +19,14 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://librenotesapp.github.io/">
-<meta property="og:title" content="libreNotes: anotações desenhadas à mão, grátis para Linux">
+<meta property="og:title" content="libreNotes: anotações desenhadas à mão, grátis para Windows, Mac e Linux">
 <meta property="og:description" content="Quadro infinito, canetas com pressão, anotações em PDF, pastas e 11 tipos de papel. Gratuito, sem conta e sem anúncios.">
 <meta property="og:image" content="https://librenotesapp.github.io/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="675">
 <meta property="og:image:alt" content="Editor do libreNotes com um mapa mental desenhado à mão">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="libreNotes: anotações desenhadas à mão, grátis para Linux">
+<meta name="twitter:title" content="libreNotes: anotações desenhadas à mão, grátis para Windows, Mac e Linux">
 <meta name="twitter:description" content="Quadro infinito, canetas com pressão, anotações em PDF e 11 tipos de papel. Gratuito.">
 <meta name="twitter:image" content="https://librenotesapp.github.io/assets/img/og.jpg">
 
@@ -40,12 +40,12 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "libreNotes",
-  "description": "App de anotações com cara de caderno desenhado à mão para Linux: quadro infinito, canetas com pressão, anotações em PDF, pastas e 11 tipos de papel.",
+  "description": "App de anotações com cara de caderno desenhado à mão para Windows, macOS e Linux: quadro infinito, canetas com pressão, anotações em PDF, pastas e 11 tipos de papel.",
   "url": "https://librenotesapp.github.io/",
   "applicationCategory": "ProductivityApplication",
   "applicationSubCategory": "Note-taking",
-  "operatingSystem": "Linux",
-  "softwareVersion": "0.1.1",
+  "operatingSystem": "Windows 10, Windows 11, macOS 13+, Linux",
+  "softwareVersion": "0.1.2",
   "inLanguage": ["pt-BR", "en"],
   "downloadUrl": "https://github.com/librenotesapp/librenotesapp.github.io/releases/latest",
   "installUrl": "https://librenotesapp.github.io/#instalar",
@@ -78,7 +78,7 @@
     { "@type": "Question", "name": "O libreNotes é gratuito?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sim. Não tem anúncios, assinatura nem versão paga, e não pede conta. Quem quiser pode apoiar o projeto com uma doação." } },
     { "@type": "Question", "name": "Funciona no Windows ou no Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Por enquanto, só no Linux (64 bits). Versões para Windows e macOS estão nos planos." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Há instalador e versão portátil para Windows 10 e 11 (64 bits) e versões para macOS 13 ou mais novo, tanto para Apple Silicon quanto para Mac com Intel. No Linux, há AppImage e pacote instalável." } },
     { "@type": "Question", "name": "Funciona com caneta e tela touch?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sim. Reconhece pressão e inclinação da caneta, a ponta de borracha e os botões laterais. Tem rejeição de palma e gestos de toque: dois dedos desfazem e três refazem." } },
     { "@type": "Question", "name": "Dá para anotar em cima de um PDF?",
@@ -86,7 +86,7 @@
     { "@type": "Question", "name": "O libreNotes abre arquivos do Excalidraw?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sim. Ele importa arquivos .excalidraw e bibliotecas .excalidrawlib. As notas são salvas no formato próprio .lnote." } },
     { "@type": "Question", "name": "Onde ficam as minhas notas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No seu computador, na pasta ~/.local/share/librenotes. Nada vai para a nuvem sem você pedir, e notas podem ser protegidas com senha." } },
+      "acceptedAnswer": { "@type": "Answer", "text": "No seu computador: em ~/.local/share/librenotes no Linux, em %APPDATA%\\librenotes no Windows e em ~/Library/Application Support/librenotes no Mac. Na versão portátil, uma pasta librenotes-data ao lado do programa guarda as notas junto com ele. Nada vai para a nuvem sem você pedir, e notas podem ser protegidas com senha." } },
     { "@type": "Question", "name": "Em quais distribuições Linux ele roda?",
       "acceptedAnswer": { "@type": "Answer", "text": "Em distribuições com GTK 4.20 ou mais novo e libadwaita 1.8 ou mais nova, como Arch, CachyOS, SteamOS, Fedora 43+ e Ubuntu 25.10+." } }
   ]
@@ -100,7 +100,7 @@
     <a class="brand" href="./"><img src="assets/img/icon.svg" alt="" width="40" height="40">libreNotes</a>
     <nav aria-label="Seções">
       <a href="#recursos">Recursos</a>
-      <a href="#instalar">Instalar</a>
+      <a href="#baixar">Baixar</a>
       <a href="#perguntas">Dúvidas</a>
       <a href="#sugestoes">Sugestões</a>
       <a href="#apoiar">Apoiar</a>
@@ -114,15 +114,25 @@
     <div class="wrap">
       <div>
         <h1>Suas ideias com cara de <span class="hl">caderno</span> desenhado à mão</h1>
-        <p class="lead">O app de anotações para Linux com quadro infinito para rabiscar, planejar e estudar. Canetas com pressão, anotações em PDF, pastas e onze tipos de papel. Gratuito, sem conta e sem anúncios.</p>
-        <div class="cta">
-          <a class="btn primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/latest" id="download">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c.2 4 .1 8 0 12M7 11.2c1.8 1.6 3.3 3.2 5 4.8 1.6-1.7 3.2-3.4 5-5M4.5 19.5c5 .4 10 .3 15-.1"/></svg>
-            Baixar grátis para Linux
-          </a>
-          <a class="btn" href="#instalar">Como instalar</a>
+        <p class="lead">O app de anotações para Windows, Mac e Linux com quadro infinito para rabiscar, planejar e estudar. Canetas com pressão, anotações em PDF, pastas e onze tipos de papel. Gratuito, sem conta e sem anúncios.</p>
+        <div class="hero-dl sketchy" aria-label="Baixar o libreNotes">
+          <p class="hero-dl-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c.2 4 .1 8 0 12M7 11.2c1.8 1.6 3.3 3.2 5 4.8 1.6-1.7 3.2-3.4 5-5M4.5 19.5c5 .4 10 .3 15-.1"/></svg>Baixe grátis</p>
+          <div class="hero-os" id="hero-windows">
+            <span class="os-name">Windows</span>
+            <span class="os-links"><a class="btn tiny primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-windows-x86_64-setup.exe" data-asset="windows-x86_64-setup.exe">Instalador (.exe)</a> <a class="btn tiny" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-windows-x86_64-portable.zip" data-asset="windows-x86_64-portable.zip">Portátil (.zip)</a></span>
+          </div>
+          <div class="hero-os" id="hero-mac">
+            <span class="os-name">macOS</span>
+            <span class="os-links"><a class="btn tiny primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-arm64.dmg" data-asset="macos-arm64.dmg">Apple Silicon (.dmg)</a> <a class="btn tiny" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-x86_64.dmg" data-asset="macos-x86_64.dmg">Intel (.dmg)</a></span>
+            <span class="more">Sem instalar: <a class="link" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-arm64.zip" data-asset="macos-arm64.zip">.zip Apple Silicon</a> · <a class="link" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-x86_64.zip" data-asset="macos-x86_64.zip">.zip Intel</a></span>
+          </div>
+          <div class="hero-os" id="hero-linux">
+            <span class="os-name">Linux</span>
+            <span class="os-links"><a class="btn tiny primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-linux-x86_64.AppImage" data-asset="linux-x86_64.AppImage">AppImage (portátil)</a> <a class="btn tiny" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-linux-x86_64.tar.gz" data-asset="linux-x86_64.tar.gz">Instalar (.tar.gz)</a></span>
+          </div>
+          <a class="hero-dl-help link" href="#baixar">Qual escolher? Veja as instruções</a>
         </div>
-        <p class="meta">Versão <span id="version">0.1.1</span> · Linux x86_64 · Windows e macOS ainda não</p>
+        <p class="meta">Versão <span id="version">0.1.2</span> · Windows · macOS · Linux · também sem instalar</p>
       </div>
       <div class="shot">
         <img src="assets/img/editor.webp" width="2560" height="1440" fetchpriority="high" alt="Editor do libreNotes com um mapa mental desenhado à mão e o painel de canetas aberto">
@@ -191,26 +201,44 @@
 
   <section id="instalar">
     <div class="wrap">
-      <h2>Instale em um minuto</h2>
-      <p class="sub">Sem senha de administrador: o libreNotes vai para a sua pasta pessoal e aparece no lançador de aplicativos.</p>
+      <h2 id="baixar">Baixe para o seu sistema</h2>
+      <p class="sub">Grátis para Windows, Mac e Linux. Escolha <strong>instalar</strong> ou a versão <strong>portátil</strong>, que roda direto da pasta (até de um pendrive) sem instalar nada.</p>
       <div class="install">
-        <div class="step sketchy">
-          <h3>Baixe</h3>
-          <p>Pegue o arquivo <code>.tar.gz</code> da versão mais recente.</p>
-          <a class="btn small primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/latest">Baixar</a>
+        <div class="platform sketchy" id="os-windows">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10.5c5-.8 10-1.4 15-2l.2 14.3c-5 .1-10 .2-15 .1zM26 8c5-.7 10-1.3 15-1.8l.1 16.4c-5 .1-10 .2-15 .2zM7 26.6c5-.1 10 0 15.1.1L22 40.5c-5-.6-10-1.2-15-2zM26 26.8c5 0 10 .1 15.1.3l-.1 15c-5-.6-10-1.2-15-1.9z"/></svg>
+          <h3>Windows</h3>
+          <p class="os-req">Windows 10 e 11, 64 bits</p>
+          <div class="dl">
+            <a class="btn small primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-windows-x86_64-setup.exe" data-asset="windows-x86_64-setup.exe">Instalador (.exe)</a>
+            <a class="btn small" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-windows-x86_64-portable.zip" data-asset="windows-x86_64-portable.zip">Portátil (.zip)</a>
+          </div>
+          <p>Portátil: extraia a pasta e abra o <code>libreNotes.exe</code>. Se o Windows avisar que o app não é reconhecido, clique em <em>Mais informações</em> › <em>Executar assim mesmo</em>.</p>
         </div>
-        <div class="step sketchy">
-          <h3>Extraia e instale</h3>
-          <p>No terminal, na pasta onde o arquivo foi salvo:</p>
+        <div class="platform sketchy" id="os-mac">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M31 13.6c-2.8 0-4.6 1.6-7 1.6s-4-1.5-6.8-1.5C12 13.8 8.6 18.4 8.8 25c.3 7.6 4.6 15.8 9 15.6 2.2-.1 3.4-1.4 6.2-1.4s3.8 1.4 6.2 1.3c3.6-.1 6.4-5.4 7.8-9.4-3.6-1.6-5.2-4.8-5-8.2.2-3 2-5.2 4.2-6.6-1.8-2.2-4-2.8-6.2-2.7zM24.6 12.4c-.2-3.6 2.4-6.6 5.8-7-.1 3.6-2.6 6.8-5.8 7z"/></svg>
+          <h3>macOS</h3>
+          <p class="os-req">macOS 13 ou mais novo</p>
+          <div class="dl">
+            <a class="btn small primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-arm64.dmg" data-asset="macos-arm64.dmg">Apple Silicon (M1–M4)</a>
+            <a class="btn small" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-x86_64.dmg" data-asset="macos-x86_64.dmg">Mac com Intel</a>
+          </div>
+          <p class="alt">Sem instalar: <a class="link" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-arm64.zip" data-asset="macos-arm64.zip">.zip Apple Silicon</a> · <a class="link" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-macos-x86_64.zip" data-asset="macos-x86_64.zip">.zip Intel</a></p>
+          <p>Abra o <code>.dmg</code> e arraste para Aplicativos. Na primeira vez, libere em <em>Ajustes do Sistema</em> › <em>Privacidade e Segurança</em> › <em>Abrir Mesmo Assim</em>.</p>
+        </div>
+        <div class="platform sketchy" id="os-linux">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5.5c-5 .1-7.6 4-7.4 9.4.1 3-1 5.4-3 8.4-2.6 3.8-4.4 8-3.6 11.4M24 5.5c5 0 7.4 4.2 7.3 9.6-.1 3 1 5.2 3 8.2 2.6 3.8 4.4 8 3.6 11.4"/><path d="M10 34.7c-1.6 2.6.4 4.8 4.4 5.6 3 .6 4.6 2.4 6.4 2.2 1.6-.2 2-1.6 3.2-1.6s1.8 1.4 3.4 1.6c1.8.2 3.4-1.6 6.4-2.2 4-.8 6-3 4.4-5.6M21 13.6h.1M27 13.6h.1M21.4 18c1.6 1.2 3.6 1.2 5.2 0"/></svg>
+          <h3>Linux</h3>
+          <p class="os-req">64 bits, distros recentes</p>
+          <div class="dl">
+            <a class="btn small primary" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-linux-x86_64.AppImage" data-asset="linux-x86_64.AppImage">AppImage (portátil)</a>
+            <a class="btn small" href="https://github.com/librenotesapp/librenotesapp.github.io/releases/download/v0.1.2/libreNotes-0.1.2-linux-x86_64.tar.gz" data-asset="linux-x86_64.tar.gz">Instalar (.tar.gz)</a>
+          </div>
+          <p>AppImage: marque como executável e abra. Para instalar no lançador, sem senha de administrador:</p>
           <pre>tar xzf libreNotes-*.tar.gz
 ./libreNotes/install.sh</pre>
         </div>
-        <div class="step sketchy">
-          <h3>Abra e rabisque</h3>
-          <p>Procure por <strong>libreNotes</strong> no lançador. Para atualizar, rode o <code>install.sh</code> da versão nova.</p>
-        </div>
       </div>
-      <p class="req">Precisa de Linux 64 bits com GTK 4.20+ e libadwaita 1.8+ (Arch, CachyOS, SteamOS, Fedora 43+, Ubuntu 25.10+ e similares). Para desinstalar: <code>./libreNotes/install.sh --remove</code>. Suas notas ficam guardadas.</p>
+      <p class="req">Linux: GTK 4.20+ e libadwaita 1.8+ (Arch, CachyOS, SteamOS, Fedora 43+, Ubuntu 25.10+ e similares). Os avisos do Windows e do Mac aparecem só porque o app não tem assinatura digital paga. <a href="https://github.com/librenotesapp/librenotesapp.github.io/releases">Todas as versões e novidades</a>.</p>
     </div>
   </section>
 
@@ -225,7 +253,7 @@
         </details>
         <details class="sketchy">
           <summary>Funciona no Windows ou no Mac?</summary>
-          <p>Por enquanto, só no Linux (64 bits). Versões para Windows e macOS estão nos planos.</p>
+          <p>Sim. Há instalador e versão portátil para Windows 10 e 11 (64 bits) e versões para macOS 13 ou mais novo, tanto para Apple Silicon quanto para Mac com Intel. No Linux, há AppImage e pacote instalável.</p>
         </details>
         <details class="sketchy">
           <summary>Funciona com caneta e tela touch?</summary>
@@ -241,7 +269,7 @@
         </details>
         <details class="sketchy">
           <summary>Onde ficam as minhas notas?</summary>
-          <p>No seu computador, na pasta <code>~/.local/share/librenotes</code>. Nada vai para a nuvem sem você pedir, e notas podem ser protegidas com senha.</p>
+          <p>No seu computador: em <code>~/.local/share/librenotes</code> no Linux, em <code>%APPDATA%\librenotes</code> no Windows e em <code>~/Library/Application Support/librenotes</code> no Mac. Na versão portátil, uma pasta <code>librenotes-data</code> ao lado do programa guarda as notas junto com ele. Nada vai para a nuvem sem você pedir, e notas podem ser protegidas com senha.</p>
         </details>
         <details class="sketchy">
           <summary>Em quais distribuições Linux ele roda?</summary>
