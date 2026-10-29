@@ -38,7 +38,9 @@
       document.querySelectorAll("[data-asset]").forEach(a => {
         const found = assets.find(x => x.name.endsWith(a.dataset.asset));
         if (found) { a.href = found.browser_download_url; return; }
-        // Arquivo ainda não saiu nesta versão: avisa em vez de dar erro.
+        // Fora desta versão, mas o href fixo aponta para uma anterior: fica nele.
+        if (!("soon" in a.dataset)) return;
+        // Arquivo ainda não saiu em versão nenhuma: avisa em vez de dar erro.
         a.href = rel.html_url;
         a.classList.add("soon");
         a.removeAttribute("download");
