@@ -1,0 +1,76 @@
+# Gera os pacotes de Windows e macOS a partir do código do app (repositório
+# privado, lido com uma chave de deploy somente leitura). Roda aqui porque o
+# Actions de repositório público não depende da cobrança da conta.
+name: Pacotes do app (Windows, macOS)
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch, tag ou commit do app
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: NangilJunior/librenotes
+          ref: ${{ inputs.ref }}
+          ssh-key: ${{ secrets.APP_DEPLOY_KEY }}
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          install: p7zip
+          pacboy: >-
+            rust:p cc:p pkgconf:p gtk4:p libadwaita:p poppler:p librsvg:p
+            gstreamer:p gst-plugins-base:p gst-plugins-good:p
+            gettext-runtime:p gettext-tools:p adwaita-icon-theme:p
+      - name: Inno Setup
+        shell: pwsh
+        run: if (-not (Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
+      - run: cargo build --release --locked
+      - run: build-aux/windows/package.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows
+          path: |
+            dist/windows/*.zip
+            dist/windows/*.exe
+
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    # O Homebrew do runner Intel já travou por horas; melhor falhar logo.
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: NangilJunior/librenotes
+          ref: ${{ inputs.ref }}
+          ssh-key: ${{ secrets.APP_DEPLOY_KEY }}
+      - name: Dependências
+        run: |
+          brew update
+          brew install gtk4 libadwaita poppler librsvg gstreamer gettext pkgconf adwaita-icon-theme dylibbundler
+          echo "GETTEXT_DIR=$(brew --prefix gettext)" >> "$GITHUB_ENV"
+          rustup update stable && rustup default stable
+      - run: cargo build --release --locked
+      - run: build-aux/macos/bundle.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos-${{ matrix.runner }}
+          path: |
+            dist/macos/*.zip
+            dist/macos/*.dmg
